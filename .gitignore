@@ -1,4 +1,10 @@
 admin/.dbdata
 admin/.idea
+admin/admin/__pycache__
+admin/products/__pycache__
+admin/products/migrations/__pycache__
+main/__pycache__
+main/migrations/__pycache__
+main/migrations/versions/__pycache__
 main/.dbdata
 main/.idea
