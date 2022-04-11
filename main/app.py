@@ -45,28 +45,12 @@ def check():
 @app.route('/api/products')
 def index():
     return jsonify(Product.query.all())
-    # if you don't use dataclasses and redeclared properties use this
-    # products = Product.query.all()
-    # return jsonify([
-    #     {
-    #         '_id': product.id,
-    #         'title': product.title,
-    #         'image': product.image
-    #     } for product in products
-    # ])
 
 
 # GET http://172.24.0.3:5000/api/products/3
 @app.route('/api/products/<id>')
 def get_product(id):
     return jsonify(Product.query.filter_by(id=id).first_or_404())
-    # if you don't use dataclasses and redeclared properties use this
-    # product = Product.query.filter_by(id=id).first_or_404()
-    # return jsonify({
-    #     'id': product.id,
-    #     'title': product.title,
-    #     'image': product.image
-    # })
 
 
 # GET http://172.24.0.3:5000/api/products/3
@@ -83,8 +67,6 @@ def like(id):
         publish('product_liked', id)
     except:
         abort(400, 'You already liked')
-
-
 
     return jsonify({
         'message': 'success'

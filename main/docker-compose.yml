@@ -10,16 +10,8 @@ services:
       - .:/app
     depends_on:
       - db
-#    network_mode: host
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
-#      172.17.0.1 host.docker.internal | add this in /etc/hosts
-# in this case we have problem in linux
-# because if we use this way to connect localhost
-# we can access to localhost but not to the ports
-# so we must delete ports: and just use network_mode: host
-# to have access to localhost with ports
-# you can directly use 172.17.0.1 from app without anything
 
   queue:
       build:

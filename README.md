@@ -15,3 +15,12 @@ but in linux you have bad options.
 * network_mode: host
   * here is problems to connect other containers by container name
   * you must rewrite connections by absolute path
+  
+```shell
+docker ps -a
+docker inspect <id>
+ifconfig
+docker network ls
+docker network inspect bridge
+
+```
