@@ -6,7 +6,8 @@ services:
       dockerfile: Dockerfile
     command: 'python manage.py runserver 0.0.0.0:8000'
     ports:
-      - 8000:8000
+      - 80:8000
+# stop nginx or use other port
     volumes:
       - .:/app
     depends_on:
